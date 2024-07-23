@@ -10,13 +10,16 @@ export default class DeviceStore {
         ]
         this._brands = [
             {id: 1, name: 'Samsung'},
-            {id: 2, name: 'Apple'}
+            {id: 2, name: 'Apple'},
+            {id: 3, name: 'Lenovo'},
+            {id: 4, name: 'Asus'}
         ]
         this._devices = [
             {id: 1, name: 'Iphone 12 pro', price: 2500},
             {id: 2, name: 'Мобила'}
         ]
         this._selectedType = {}
+        this._selectedBrand = {}
         makeAutoObservable(this)
     }
 
@@ -34,6 +37,10 @@ export default class DeviceStore {
 
     setSelectedType(type) {
         this._selectedType = type
+    }
+
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand
     }
 
     setIsAuth(bool) {
@@ -58,6 +65,10 @@ export default class DeviceStore {
 
     get selectedType() {
         return this._selectedType
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
     }
 
     get isAuth() {
