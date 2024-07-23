@@ -3,8 +3,10 @@ import { makeAutoObservable } from "mobx"
 export default class DeviceStore {
     constructor() {
         this._types = [
-            {id: 1, name: 'Холодос'},
-            {id: 2, name: 'Мобила'}
+            {id: 1, name: 'Холодильники'},
+            {id: 2, name: 'Смартфоны'},
+            {id: 3, name: 'Ноутбуки'},
+            {id: 4, name: 'Телевизоры'}
         ]
         this._brands = [
             {id: 1, name: 'Samsung'},
@@ -14,6 +16,7 @@ export default class DeviceStore {
             {id: 1, name: 'Iphone 12 pro', price: 2500},
             {id: 2, name: 'Мобила'}
         ]
+        this._selectedType = {}
         makeAutoObservable(this)
     }
 
@@ -27,6 +30,10 @@ export default class DeviceStore {
 
     setDevices(devices) {
         this._devices = devices
+    }
+
+    setSelectedType(type) {
+        this._selectedType = type
     }
 
     setIsAuth(bool) {
@@ -47,6 +54,10 @@ export default class DeviceStore {
 
     get devices() {
         return this._devices
+    }
+
+    get selectedType() {
+        return this._selectedType
     }
 
     get isAuth() {
