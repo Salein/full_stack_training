@@ -16,6 +16,8 @@ export default class DeviceStore {
         ]
         this._devices = [
             {id: 1, name: 'Iphone 12 pro', price: 2500},
+            {id: 2, name: 'Мобила'},
+            {id: 2, name: 'Мобила'},
             {id: 2, name: 'Мобила'}
         ]
         this._selectedType = {}
