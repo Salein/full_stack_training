@@ -9,10 +9,10 @@ const Shop = () => {
     return (
         <Container>
             <Row className="mt-3">
-                <Col md={3}>
+                <Col md={2}>
                     <TypeBar />
                 </Col>
-                <Col md={3}>
+                <Col md={5}>
                     <BrandBar />
                 </Col>
             </Row>
