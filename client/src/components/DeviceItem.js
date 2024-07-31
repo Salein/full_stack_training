@@ -11,7 +11,6 @@ const DeviceItem = ({ device }) => {
     const handleClick = useCallback(() => {
         navigate(DEVICE_ROUTE + "/" + device.id)
     }, [navigate, device.id])
-    console.log(navigate)
 
     return (
         <Col md={4} className="mt-2">
