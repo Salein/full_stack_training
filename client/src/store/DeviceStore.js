@@ -15,10 +15,10 @@ export default class DeviceStore {
             {id: 4, name: 'Asus'}
         ]
         this._devices = [
-            {id: 1, name: 'Iphone 12 pro', price: 2500, rating: 5},
-            {id: 2, name: 'Мобила', price: 2500, rating: 5},
-            {id: 3, name: 'Мобила', price: 2500, rating: 5},
-            {id: 4, name: 'Мобила', price: 2500, rating: 5}
+            {id: 1, name: 'Iphone 12 pro', price: 2500, rating: 5, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgEXpJPdThteDNHAPLwxl3ckT-fPdJu1hRJQ&s'},
+            {id: 2, name: 'Мобила', price: 2500, rating: 5, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgEXpJPdThteDNHAPLwxl3ckT-fPdJu1hRJQ&s'},
+            {id: 3, name: 'Мобила', price: 2500, rating: 5, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgEXpJPdThteDNHAPLwxl3ckT-fPdJu1hRJQ&s'},
+            {id: 4, name: 'Мобила', price: 2500, rating: 5, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgEXpJPdThteDNHAPLwxl3ckT-fPdJu1hRJQ&s'}
         ]
         this._selectedType = {}
         this._selectedBrand = {}

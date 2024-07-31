@@ -9,7 +9,8 @@ import { DEVICE_ROUTE } from "../utils/consts"
 const DeviceItem = ({ device }) => {
     const navigate = useNavigate()
     const handleClick = useCallback(() => {
-        navigate(DEVICE_ROUTE + '/' + device.id)}, [navigate, device.id])
+        navigate(DEVICE_ROUTE + "/" + device.id)
+    }, [navigate, device.id])
     console.log(navigate)
 
     return (
