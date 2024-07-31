@@ -1,20 +1,24 @@
-import React from "react"
+import React, { useCallback } from "react"
 import Card from "react-bootstrap/esm/Card"
 import Col from "react-bootstrap/esm/Col"
 import Image from "react-bootstrap/Image"
 import star from "../assets/star.png"
-import { useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const DeviceItem = ({ device }) => {
-    const history = useLocation()
-    console.log(history)
+    const navigate = useNavigate()
+    const handlClick = useCallback(() => {
+        navigate(`/card/${device.id}`)
+    }, [navigate])
+    console.log(navigate)
 
     return (
-        <Col md={4} className="mt-2" onClick={() => pathname}>
+        <Col md={4} className="mt-2">
             <Card
                 style={{ width: 150, cursor: "pointer" }}
                 border={"light"}
                 className="m-1"
+                onClick={handlClick}
             >
                 <Image width={150} height={150} src={device.img} />
                 <div className="text-black-50 mt-1 d-flex justify-content-between align-items-center ">
