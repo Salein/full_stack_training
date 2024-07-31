@@ -4,12 +4,12 @@ import Col from "react-bootstrap/esm/Col"
 import Image from "react-bootstrap/Image"
 import star from "../assets/star.png"
 import { useNavigate } from "react-router-dom"
+import { DEVICE_ROUTE } from "../utils/consts"
 
 const DeviceItem = ({ device }) => {
     const navigate = useNavigate()
-    const handlClick = useCallback(() => {
-        navigate(`/card/${device.id}`)
-    }, [navigate])
+    const handleClick = useCallback(() => {
+        navigate(DEVICE_ROUTE + '/' + device.id)}, [navigate, device.id])
     console.log(navigate)
 
     return (
@@ -18,7 +18,7 @@ const DeviceItem = ({ device }) => {
                 style={{ width: 150, cursor: "pointer" }}
                 border={"light"}
                 className="m-1"
-                onClick={handlClick}
+                onClick={handleClick}
             >
                 <Image width={150} height={150} src={device.img} />
                 <div className="text-black-50 mt-1 d-flex justify-content-between align-items-center ">
