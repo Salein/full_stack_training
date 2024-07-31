@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useCallback, useContext } from "react"
 import { Context } from "../index"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
@@ -11,6 +11,9 @@ import { observer } from "mobx-react-lite"
 const NavBar = observer(() => {
     const { user } = useContext(Context)
     const navigate = useNavigate()
+    const handleClickAdmin = useCallback(() => {
+        navigate(ADMIN_ROUTE)
+    }, [navigate])
 
     return (
         <Navbar bg="dark" data-bs-theme="dark">
@@ -22,7 +25,7 @@ const NavBar = observer(() => {
                     <Nav className="ml-auto" style={{ color: "white" }}>
                         <Button
                             variant={"outline-light"}
-                            onClick={() => navigate(ADMIN_ROUTE)}
+                            onClick={handleClickAdmin}
                         >
                             Админ панель
                         </Button>
@@ -31,7 +34,7 @@ const NavBar = observer(() => {
                             onClick={() => navigate(LOGIN_ROUTE)}
                             className="ml-4"
                         >
-                            Войти
+                            Выйти
                         </Button>
                     </Nav>
                 ) : (
