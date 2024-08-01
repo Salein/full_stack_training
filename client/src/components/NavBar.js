@@ -11,9 +11,6 @@ import { observer } from "mobx-react-lite"
 const NavBar = observer(() => {
     const { user } = useContext(Context)
     const navigate = useNavigate()
-    const handleClickAdmin = useCallback(() => {
-        navigate(ADMIN_ROUTE)
-    }, [navigate])
 
     return (
         <Navbar bg="dark" data-bs-theme="dark">
@@ -25,7 +22,7 @@ const NavBar = observer(() => {
                     <Nav className="ml-auto" style={{ color: "white" }}>
                         <Button
                             variant={"outline-light"}
-                            onClick={handleClickAdmin}
+                            onClick={() => navigate(ADMIN_ROUTE)}
                         >
                             Админ панель
                         </Button>
