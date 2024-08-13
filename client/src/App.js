@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar"
 import { observer } from "mobx-react-lite"
 import { Context } from "."
 import { check } from "./http/userAPI"
+import Spinner from 'react-bootstrap/Spinner'
 
 const App = observer(() => {
     const { user } = useContext(Context)
@@ -17,7 +18,11 @@ const App = observer(() => {
                 user.setIsAuth(true)
             })
             .finally(() => setLoading(false))
-    }, [])
+    }, [user])
+
+    if (loading) {
+        return <Spinner animation={"grow"}/>
+    }
 
     return (
         <BrowserRouter>
